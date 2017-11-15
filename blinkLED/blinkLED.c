@@ -8,17 +8,17 @@
 int main(void) {
 
   // -------- Inits --------- //
-  DDRB |= 0b00111111;            /* Data Direction Register B:
+  DDRB |= (1 << PB1);            /* Data Direction Register B:
                                    writing a one to the bit
                                    enables output. */
 
   // ------ Event loop ------ //
   while (1) {
 
-    PORTB = 0b11111111;          /* Turn on first LED bit/pin in PORTB */
+    PORTB = (1 << PB1);          /* Turn on first LED bit/pin in PORTB */
     _delay_ms(1000);                                           /* wait */
 
-    PORTB = 0b00000000;          /* Turn off all B pins, including LED */
+    PORTB = (0 << PB1);          /* Turn off all B pins, including LED */
     _delay_ms(1000);                                           /* wait */
 
   }                                                  /* End event loop */
