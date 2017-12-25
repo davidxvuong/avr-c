@@ -1,0 +1,3 @@
+#define SPEAKER_DDR DDRB
+#define SPEAKER_PORT PORTB
+#define SPEAKER PB0
